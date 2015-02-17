@@ -26,4 +26,52 @@ class InformationController < ApplicationController
 
   def champions_1990_to_2013
   end
+
+  def brackets
+  end
+
+  def team_scores
+  end
+
+  def weight_106
+  end
+
+  def weight_113
+  end
+
+  def weight_120
+  end
+
+  def weight_126
+  end
+
+  def weight_132
+  end
+
+  def weight_138
+  end
+
+  def weight_145
+  end
+
+  def weight_152
+  end
+
+  def weight_160
+  end
+
+  def weight_170
+  end
+
+  def weight_182
+  end
+
+  def weight_195
+  end
+
+  def weight_220
+  end
+
+  def weight_285
+  end
 end

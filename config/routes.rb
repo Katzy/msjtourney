@@ -1,5 +1,37 @@
 Rails.application.routes.draw do
 
+  get 'information/weight_106' => 'information#weight_106'
+
+  get 'information/weight_113' => 'information#weight_113'
+
+  get 'information/weight_120' => 'information#weight_120'
+
+  get 'information/weight_126' => 'information#weight_126'
+
+  get 'information/weight_132' => 'information#weight_132'
+
+  get 'information/weight_138' => 'information#weight_138'
+
+  get 'information/weight_145' => 'information#weight_145'
+
+  get 'information/weight_152' => 'information#weight_152'
+
+  get 'information/weight_160' => 'information#weight_160'
+
+  get 'information/weight_170' => 'information#weight_170'
+
+  get 'information/weight_182' => 'information#weight_182'
+
+  get 'information/weight_195' => 'information#weight_195'
+
+  get 'information/weight_220' => 'information#weight_220'
+
+  get 'information/weight_285' => 'information#weight_285'
+
+  get 'information/team_scores' => 'information#team_scores'
+
+  get 'information/brackets' => 'information#brackets'
+
   get 'information/about' => 'information#about'
 
   get 'information/teams_entered' => 'information#teams_entered'

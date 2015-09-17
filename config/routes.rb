@@ -77,6 +77,8 @@ Rails.application.routes.draw do
 
   resources :wrestlers, only: [:index, :edit, :show, :update]
 
+  resources :applicants
+
   controller :tournaments do
     delete '/tournaments/:id',      action: 'destroy'
   end

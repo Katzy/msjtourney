@@ -1,7 +1,10 @@
 class UserMailer < ActionMailer::Base
   default from: "msjwrestlinginvitational@gmail.com"
 
-
+  def new_applicant(applicant)
+    @applicant = applicant
+    mail(to: lhkatz@comcast.net, subject: "MSJ Tourney Application Submitted")
+  end
 
   def new_user(user)
     @user = user

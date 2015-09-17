@@ -11,10 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150126215236) do
+ActiveRecord::Schema.define(version: 20150917191510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "applicants", force: true do |t|
+    t.string  "school"
+    t.string  "coach"
+    t.string  "address"
+    t.string  "city"
+    t.string  "state"
+    t.string  "zip_code"
+    t.string  "school_phone"
+    t.string  "email"
+    t.string  "best_phone"
+    t.boolean "full_team_entry",     default: false
+    t.boolean "individual_entry",    default: false
+    t.string  "number_of_wrestlers"
+  end
 
   create_table "teams", force: true do |t|
     t.string  "school"

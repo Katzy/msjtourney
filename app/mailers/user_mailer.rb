@@ -3,7 +3,7 @@ class UserMailer < ActionMailer::Base
 
   def new_applicant(applicant)
     @applicant = applicant
-    mail(to: "lhkatz@comcast.net", subject: "MSJ Tourney Application Submitted")
+    mail(to: "lhkatz@pacbell.net", subject: "MSJ Tourney Application Submitted")
   end
 
   def new_user(user)

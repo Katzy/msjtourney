@@ -83,14 +83,21 @@
 
      <div class="row">
         <div class="form-group">
-          <%= f.label :full_team_entry, class: 'col-sm-2 control-label' %>
+          <%= f.label :full_team_entry, class: 'col-sm-4 control-label' %>
           <div class="col-sm-2">
             <%= f.check_box :full_team_entry, class: 'form-control' %><br>
           </div>
-          <%= f.label :individual_entry, class: 'col-sm-2 control-label' %>
+          $425 by Dec 1<br> $450 by Jan 1<br>$500 AFTER Jan 1<br><br>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <%= f.label :individual_entry, class: 'col-sm-4 control-label' %>
           <div class="col-sm-2">
             <%= f.check_box :individual_entry, class: 'form-control' %><br>
           </div>
+          $40 / wrestler by Dec 1<br> $50 by Jan 1<br>$60 AFTER Jan 1<br><br>
           <%= f.label :number_of_wrestlers, class: 'col-sm-2 control-label' %>
           <div class="col-sm-2">
             <%= f.text_field :number_of_wrestlers, class: 'form-control' %><br>

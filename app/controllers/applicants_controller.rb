@@ -27,6 +27,7 @@ class ApplicantsController < ApplicationController
     respond_to do |format|
       if @applicant.save
         UserMailer.new_applicant(@applicant).deliver
+        UserMailer.applicant_confirmation(@applicant).deliver
         format.html { redirect_to root_path, notice: 'application was successfully submitted.' }
          format.json { render action: 'welcome/index', status: :created, location: @applicant }
         # added:

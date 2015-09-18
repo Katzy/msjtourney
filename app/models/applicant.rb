@@ -3,11 +3,8 @@ class Applicant < ActiveRecord::Base
 
   validates :school, presence: true, null: false
   validates :coach, presence: true, null: false
-  validates :address, presence: true, null: false
   validates :city, presence: true, null: false
   validates :state, presence: true, null: false
-  validates :zip_code, presence: true, null: false
-
   validates :best_phone, presence: true, null: false
   validates :email, presence: true, null: false
 

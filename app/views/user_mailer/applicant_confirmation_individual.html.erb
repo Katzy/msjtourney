@@ -9,15 +9,15 @@
       </p>
 
       <p>
-      <h4><b>You entered<b>: <%= @applicant.number_of_wrestlers %> wrestlers</h4>
+      <h4><b>You entered</b>: <%= @applicant.number_of_wrestlers %> wrestlers</h4>
       <p>
       <h3><u>Please pay</u>: </h3>
            <br>$<%= @applicant.fee %> if paid in full by December 1, 2015 <br>
                 $<%= @applicant.fee.to_i + (10 * @applicant.number_of_wrestlers.to_i) %> by January 1, 2016 <br>
-          $<%= @applicant.fee.to_i + (20 * @applicant.number_of_wrestlers.to_i) %> after January 1, 2016 <br><br>
+          $<%= @applicant.fee.to_i + (20 * @applicant.number_of_wrestlers.to_i) %> after January 1, 2016 <br>
 
 
-        <b>SEVEN OR MORE ENTRIES PAY FULL TEAM PRICE!</b><br>
+        <br> <b>TEAMS ENTERING 7 OR MORE WRESTLERS PAY FULL TEAM PRICE! - NO EXCEPTIONS</b><br>
       </p>
 
       <p>
@@ -26,10 +26,10 @@
 
       <p>
         If you have ANY questions, please contact Larry Katz @ 510-543-5940 or Scott Katz @ 323-317-5900.
-      </p>
+      </p><br>
 
       <p>
-        Sincerely,
+        Sincerely,<br>
 
 
         MSJ Wrestling

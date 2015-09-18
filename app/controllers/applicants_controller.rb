@@ -24,6 +24,8 @@ class ApplicantsController < ApplicationController
     @applicant = Applicant.create(applicant_params)
     if @applicant.number_of_wrestlers.to_i < 7
       @applicant.fee = (@applicant.number_of_wrestlers.to_i * 40)
+    else
+      @applicant.fee = 425
       @applicant.save
     end
 

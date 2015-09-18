@@ -22,12 +22,19 @@ class ApplicantsController < ApplicationController
   def create
 
     @applicant = Applicant.create(applicant_params)
-
+    if @applicant.number_of_wrestlers < 7
+      @applicant.fee = (@applicant.number_of_wrestlers * 40)
+      @applicant.save
+    end
 
     respond_to do |format|
       if @applicant.save
         UserMailer.new_applicant(@applicant).deliver
-        UserMailer.applicant_confirmation(@applicant).deliver
+        if @applicant.number_of_wrestlers < 7
+          UserMailer.applicant_confirmation_individual(@applicant).deliver
+        else
+          UserMailer.applicant_confirmation_team(@applicant).deliver
+        end
         format.html { redirect_to root_path, notice: 'application was successfully submitted.' }
          format.json { render action: 'index', status: :created, location: @applicant }
         # added:

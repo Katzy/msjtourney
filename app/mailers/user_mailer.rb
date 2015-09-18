@@ -6,7 +6,12 @@ class UserMailer < ActionMailer::Base
     mail(to: "lhkatz@pacbell.net", subject: "MSJ Tourney Application Submitted")
   end
 
-  def applicant_confirmation(applicant)
+  def applicant_confirmation_team(applicant)
+    @applicant = applicant
+    mail(to: applicant.email, subject: "Your 2016 MSJ Wrestling Invitational Application Has Been Received")
+  end
+
+  def applicant_confirmation_individual(applicant)
     @applicant = applicant
     mail(to: applicant.email, subject: "Your 2016 MSJ Wrestling Invitational Application Has Been Received")
   end

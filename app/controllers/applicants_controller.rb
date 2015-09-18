@@ -26,12 +26,12 @@ class ApplicantsController < ApplicationController
 
     respond_to do |format|
       if @applicant.save
-        UserMailer.new_applicant(@applicant).deliver
-        UserMailer.applicant_confirmation(@applicant).deliver
+        # UserMailer.new_applicant(@applicant).deliver
+        # UserMailer.applicant_confirmation(@applicant).deliver
         format.html { redirect_to root_path, notice: 'application was successfully submitted.' }
-         format.json { render action: 'welcome/index', status: :created, location: @applicant }
+         format.json { render action: 'index', status: :created, location: @applicant }
         # added:
-        format.js   { render action: 'welcome/index', status: :created, location: @applicant }
+        format.js   { render action: 'index', status: :created, location: @applicant }
       else
         format.html { render action: 'new' }
         format.json { render json: @applicant.errors, status: :unprocessable_entity }

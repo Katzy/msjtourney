@@ -11,9 +11,9 @@
 
       <p>
       <h3><u>Please pay</u>: </h3>
-           <br><%= @applicant.fee %> if paid in full by December 1, 2015 <br>
-                <%= @applicant.fee + (10 * @applicant.number_of_wrestlers) %> by January 1, 2016 <br>
-          <%= @applicant.fee + (20 * @applicant.number_of_wrestlers) %> after January 1, 2016 <br><br>
+           <br>$<%= @applicant.fee %> if paid in full by December 1, 2015 <br>
+                $<%= @applicant.fee.to_i + (10 * @applicant.number_of_wrestlers.to_i) %> by January 1, 2016 <br>
+          $<%= @applicant.fee.to_i + (20 * @applicant.number_of_wrestlers.to_i) %> after January 1, 2016 <br><br>
 
 
         <b>Seven or more entries pay full team price.</b><br><br>

@@ -22,15 +22,15 @@ class ApplicantsController < ApplicationController
   def create
 
     @applicant = Applicant.create(applicant_params)
-    if @applicant.number_of_wrestlers < 7
-      @applicant.fee = (@applicant.number_of_wrestlers * 40)
+    if @applicant.number_of_wrestlers.to_i < 7
+      @applicant.fee = (@applicant.number_of_wrestlers.to_i * 40)
       @applicant.save
     end
 
     respond_to do |format|
       if @applicant.save
         UserMailer.new_applicant(@applicant).deliver
-        if @applicant.number_of_wrestlers < 7
+        if @applicant.number_of_wrestlers.to_i < 7
           UserMailer.applicant_confirmation_individual(@applicant).deliver
         else
           UserMailer.applicant_confirmation_team(@applicant).deliver

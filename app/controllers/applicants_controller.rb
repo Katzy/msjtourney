@@ -42,9 +42,9 @@ class ApplicantsController < ApplicationController
           UserMailer.applicant_confirmation_team(@applicant).deliver
         end
         format.html { redirect_to root_path, notice: 'application was successfully submitted.' }
-         format.json { render action: 'index', status: :created, location: @applicant }
+         format.json { render action: 'applicants/index', status: :created, location: @applicant }
         # added:
-        format.js   { render action: 'index', status: :created, location: @applicant }
+        format.js   { render action: 'appliants/index', status: :created, location: @applicant }
       else
         format.html { render action: 'new' }
         format.json { render json: @applicant.errors, status: :unprocessable_entity }

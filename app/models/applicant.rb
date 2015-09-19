@@ -10,6 +10,7 @@ class Applicant < ActiveRecord::Base
   validates :number_of_wrestlers, presence: true, null: false
 
 
+
   def self.to_csv(options = {})
     x = ""
     y = ""
@@ -22,4 +23,7 @@ class Applicant < ActiveRecord::Base
       end
     end
   end
+
+
 end
+

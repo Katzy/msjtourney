@@ -17,9 +17,10 @@
 
 </head>
 <body>
+
 <nav>
   <%= render partial: 'shared/header' %>
-<nav>
+</nav>
 
 <% if flash[:notice] %>
   <p class="notice"><%= flash[:notice] %></p>
@@ -34,6 +35,7 @@
 <nav>
   <%= render partial: 'shared/footer' %>
 </nav>
+
 
 </body>
 </html>

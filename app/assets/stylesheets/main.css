@@ -138,8 +138,8 @@ body {
   text-align: center;
 }
 
-.container .entry-form {
-
+.entry-form {
+  padding-top: 50px;
   height: 100%;
   font-size: 35px;
   vertical-align: middle;
@@ -194,6 +194,17 @@ text-align: center;
 
 }
 
+.border-wrestler-div .form-actions {
+
+  float: center;
+}
+
+.border-wrestler-div h6 {
+
+text-align: center;
+
+}
+
 .navbar {
 
   padding: 12px;
@@ -205,6 +216,12 @@ text-align: center;
 
   text-align: center;
 
+
+}
+
+.form-actions {
+
+float: center;
 
 }
 

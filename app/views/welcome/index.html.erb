@@ -1,9 +1,5 @@
 <br><br><br><br>
-<div class="container">
-  <div class="entry-form">
-     <a><%= link_to '2016 ENTRY FORM', '#new_applicant_modal', 'data-toggle' => 'modal' %></a>
-
-  </div>
+  <%= render 'applicants/index', { :wrestler => @wrestler } %>
   </div>
 <br>
 <!--
@@ -47,7 +43,7 @@
   <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
 
   </a>
-</div> <!-- Carousel --><br><br>
+<!-- </div>  --><!-- Carousel --><br><br>
 
 
 <div class="container">
@@ -70,23 +66,6 @@
     <a><%= link_to '285', asset_path("_285.pdf"), :class => "links" %></a>
  -->
      <a><%= link_to "TEAM SCORES", asset_path("_team.pdf"), :class => "links" %></a>
-<br><br><br>
-</div>
-</div>
-
- <div class="modal fade" id="new_applicant_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">2016 Mission San Jose Invitational Wrestling Tournament Application</h4>
-      </div>
-      <div class="modal-body">
-        <%= render 'applicants/form', modal: true %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
+  <br><br><br>
   </div>
 </div>

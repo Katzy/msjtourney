@@ -8,7 +8,7 @@ class Applicant < ActiveRecord::Base
   validates :best_phone, presence: true, null: false
   validates :email, presence: true, null: false
   validates :number_of_wrestlers, presence: true, null: false
-
+  validates_uniqueness_of :email
 
 
   def self.to_csv(options = {})

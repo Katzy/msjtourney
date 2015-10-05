@@ -54,6 +54,14 @@ class ApplicantsController < ApplicationController
     end
   end
 
+  def destroy
+
+    @applicant = Applicant.find_by_id(params[:id])
+    @applicant.destroy
+
+    redirect_to applicants_path
+  end
+
   private
 
   def applicant_params

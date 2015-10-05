@@ -49,46 +49,46 @@
 </div>
 <div class="container" ng-view="">
   <div class="row">
-      <div class="panel ">
-        <div class="panel-body">
-          <div class="table-responsive">
-            <table class="table table-bordered table-hover" id="wrestlers_table">
-              <thead>
-                <tr>
-                  <th>Wt</th>
-                  <th>School</th>
-                  <th>First</th>
-                  <th>Last</th>
-                  <th>YR</th>
-                  <th>W</th>
-                  <th>L</th>
-                  <th>SEC</th>
-                  <th>ST</th>
-                  <th>T1</th>
-                  <th>T2</th>
-                  <th>T3</th>
-                  <th>T4</th>
-                  <th>T5</th>
-                  <th>T6</th>
-                  <th>T7</th>
-                  <th>T8</th>
-                  <th>Comments</th>
-                    <% if current_user.admin? %>
-                    <th class="col-md-0">Edit Wrestler</th>
-                    <th class="col-md-0">Delete Wrestler</th>
-                  <% end %>
-                </tr>
-              </thead>
-              <tbody>
-                <% @wrestlers.each do |wrestler, user| %>
-                  <%= render partial: '/users/wrestlers/table_row', locals: { wrestler: wrestler, user: user} %>
+    <div class="panel ">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover" id="wrestlers_table">
+            <thead>
+              <tr>
+                <th>Wt</th>
+                <th>School</th>
+                <th>First</th>
+                <th>Last</th>
+                <th>YR</th>
+                <th>W</th>
+                <th>L</th>
+                <th>SEC</th>
+                <th>ST</th>
+                <th>T1</th>
+                <th>T2</th>
+                <th>T3</th>
+                <th>T4</th>
+                <th>T5</th>
+                <th>T6</th>
+                <th>T7</th>
+                <th>T8</th>
+                <th>Comments</th>
+                  <% if current_user.admin? %>
+                  <th class="col-md-0">Edit Wrestler</th>
+                  <th class="col-md-0">Delete Wrestler</th>
                 <% end %>
-              </tbody>
-            </table>
-          </div>
+              </tr>
+            </thead>
+            <tbody>
+              <% @wrestlers.each do |wrestler, user| %>
+                <%= render partial: '/users/wrestlers/table_row', locals: { wrestler: wrestler, user: user} %>
+              <% end %>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
+  </div>
   <div class="add_wrestler_button">
     <% if current_user.admin?  %>
       <h3><%= link_to 'ADD WRESTLER', '#new_user_wrestler_modal', 'data-toggle' => 'modal' %></h3><br><br><br>

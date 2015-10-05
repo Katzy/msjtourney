@@ -1,0 +1,5 @@
+<%- headers = ['School', 'Coach', 'City', 'State', 'Phone', 'Email', 'Full', 'Partial', '# of Entries', 'Fee'] -%>
+<%= CSV.generate_line headers %>
+<%- @applicants.each do |applicant| -%>
+  <%= CSV.generate_line([applicant.school, applicant.coach, applicant.city, applicant.state, applicant.best_phone, applicant.email, applicant.full_team_entry, applicant.individual_entry, applicant.number_of_wrestlers, applicant.fee]) %>
+<%- end -%>

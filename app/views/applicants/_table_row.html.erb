@@ -1,0 +1,18 @@
+<tr>
+  <td><%= applicant.school %></td>
+  <td><%= applicant.coach %></td>
+  <td><%= applicant.address %></td>
+  <td><%= applicant.city %></td>
+  <td><%= applicant.state %></td>
+  <td><%= applicant.best_phone %></td>
+  <td><%= applicant.email %></td>
+  <td><%= applicant.full_team_entry %></td>
+  <td><%= applicant.individual_entry %></td>
+  <td><%= applicant.number_of_wrestlers %></td>
+  <td><%= applicant.fee %></td>
+
+
+  <% if current_user.admin? %>
+  <td><%= link_to 'Delete', applicant, method: "delete", :data => {:confirm => 'Are you sure?'} %></td>
+  <% end %>
+</tr>

@@ -1,0 +1,44 @@
+<br><br>
+<div class="team-name">
+<h3>APPLICANTS</h3>
+
+    Download:
+      <%= link_to "CSV", applicants_path(format: "csv") %> |
+      <%= link_to "Excel", applicants_path(format: "xls") %>
+      </div>
+
+<div class="container" ng-view="">
+  <div class="row">
+    <div class="panel ">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover" id="wrestlers_table">
+            <thead>
+              <tr>
+                <th>School</th>
+                <th>Coach</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Full Team</th>
+                <th>Individual Entries</th>
+                <th># of Wrestlers</th>
+                <th>Fee</th>
+                <% if current_user.admin? %>
+
+                  <th class="col-md-0">Delete Applicant</th>
+                <% end %>
+              </tr>
+            </thead>
+            <tbody>
+              <% @applicants.each do |applicant| %>
+                <%= render partial: '/applicants/table_row', locals: { applicant: applicant} %>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

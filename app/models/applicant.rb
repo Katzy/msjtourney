@@ -15,11 +15,11 @@ class Applicant < ActiveRecord::Base
     x = ""
     y = ""
     CSV.generate(options) do |csv|
-      csv << ["school", "Coach name", "Address", "City", "State", "School Phone #", "Best Phone #" ]
+      csv << ["school", "Coach name", "City", "State", "Phone", "Email", "Full Team", "Individual Entries", "# of Wrestlers", "Fee" ]
       all.each do |applicant|
-        applicant.full_team_entry == 1 ? x = "Yes" : x = "No"
-        applicant.individual_entry == 1 ? y = "Yes" : y = "No"
-        csv << [applicant.school, applicant.coach, applicant.address, applicant.city, applicant.state, applicant.zip_code, applicant.school_phone, applicant.best_phone, applicant.email, x, y, applicant.number_of_wrestlers]
+        applicant.full_team_entry == true ? x = "Yes" : x = "No"
+        applicant.individual_entry == true ? y = "Yes" : y = "No"
+        csv << [applicant.school, applicant.coach, applicant.city, applicant.state, applicant.best_phone, applicant.email, x, y, applicant.number_of_wrestlers, applicant.fee]
       end
     end
   end

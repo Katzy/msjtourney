@@ -83,6 +83,10 @@ Rails.application.routes.draw do
     delete '/tournaments/:id',      action: 'destroy'
   end
 
+  controller :applicants do
+    delete '/applicants/:id',      action: 'destroy'
+  end
+
   controller :wrestlers do
     delete '/wrestlers/:id',      action: 'destroy'
   end

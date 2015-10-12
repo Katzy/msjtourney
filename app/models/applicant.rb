@@ -8,6 +8,7 @@ class Applicant < ActiveRecord::Base
   validates :best_phone, presence: true, null: false
   validates :email, presence: true, null: false
   validates :number_of_wrestlers, presence: true, null: false
+  validates :section, presence: true
   validates_uniqueness_of :email
 
 
@@ -15,11 +16,11 @@ class Applicant < ActiveRecord::Base
     x = ""
     y = ""
     CSV.generate(options) do |csv|
-      csv << ["school", "Coach name", "City", "State", "Phone", "Email", "Full Team", "Individual Entries", "# of Wrestlers", "Fee" ]
+      csv << ["school", "Section", "Coach name", "City", "State", "Phone", "Email", "Full Team", "Individual Entries", "# of Wrestlers", "Fee" ]
       all.each do |applicant|
         applicant.full_team_entry == true ? x = "Yes" : x = "No"
         applicant.individual_entry == true ? y = "Yes" : y = "No"
-        csv << [applicant.school, applicant.coach, applicant.city, applicant.state, applicant.best_phone, applicant.email, x, y, applicant.number_of_wrestlers, applicant.fee]
+        csv << [applicant.school, applicant.section, applicant.coach, applicant.city, applicant.state, applicant.best_phone, applicant.email, x, y, applicant.number_of_wrestlers, applicant.fee]
       end
     end
   end

@@ -21,6 +21,11 @@ class UserMailer < ActionMailer::Base
     mail(to: @user.email, subject: "Welcome to MSJ Wrestling Invitational Website / ACTION REQUIRED")
   end
 
+  def new_user_added(user)
+    @user = user
+    mail(to: ["lhkatz@pacbell.net", "scottalankatz@gmail.com"], subject: "New User Created")
+  end
+
   def team_updated(user)
     @user = user
     mail(to: "lhkatz@pacbell.net", subject: "Team Info Updated")

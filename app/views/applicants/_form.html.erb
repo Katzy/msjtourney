@@ -48,10 +48,17 @@
           <div class="col-sm-4">
             <%= f.text_field :email, class: 'form-control' %><br>
           </div>
-          <%= f.label :best_phone, "Best # to reach you", class: 'col-sm-5 control-label' %>
-          <div class="col-sm-5">
+          <%= f.label :best_phone, "Best # to reach you", class: 'col-sm-3 control-label' %>
+          <div class="col-sm-3">
             <%= f.text_field :best_phone, class: 'form-control' %><br>
           </div>
+           <div class="col-sm-2">
+             <%= f.label :section, class: 'col-sm-2' %>
+            </div>
+            <div class="col-sm-2">
+             <%= f.collection_select :section, ['C', 'CC', 'LA', 'N', 'NC', 'O', 'S', 'SD', 'SF', 'SJ', 'OTHER'], :to_s, :to_s, include_blank: true, class: 'col-sm-2' %>
+             </div>
+      </div>
         </div>
       </div>
       <h6><u>CHECK ONE!</u></h6><br>

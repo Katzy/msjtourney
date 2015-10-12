@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_filter :authorize_admin, only: :create
+  # before_filter :authorize_admin, only: :create
   before_filter :authenticate_user!, :only => [:edit, :update]
   before_filter :skip_password_attribute, only: :update
 
@@ -65,6 +65,7 @@ class UsersController < ApplicationController
       # @team.user_id = @user.id
       # @team = Team.create(team_params)
       UserMailer.new_user(@user).deliver
+      UserMailer.new_user_added(@user).deliver
       redirect_to root_url, notice: "User was successfully created"
     else
       render :new

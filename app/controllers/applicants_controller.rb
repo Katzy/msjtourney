@@ -20,7 +20,6 @@ class ApplicantsController < ApplicationController
   end
 
   def create
-
     @applicant = Applicant.create(applicant_params)
     if @applicant.number_of_wrestlers.to_i < 7
       @applicant.fee = (@applicant.number_of_wrestlers.to_i * 40)
@@ -33,8 +32,17 @@ class ApplicantsController < ApplicationController
       @applicant.save
     end
 
+    # @user = User.new
+    # @user.email = @applicant.email
+    # @user.name = @applicant.coach
+    # @user.school = @applicant.school_phone
+    # @user.cell = @applicant.best_phone
+    # @user.section = @applicant.section
+    # @user.create
+
     respond_to do |format|
       if @applicant.save
+
         UserMailer.new_applicant(@applicant).deliver
         if @applicant.number_of_wrestlers.to_i < 7
           UserMailer.applicant_confirmation_individual(@applicant).deliver
@@ -65,7 +73,7 @@ class ApplicantsController < ApplicationController
   private
 
   def applicant_params
-    params.require(:applicant).permit(:school, :coach, :address, :city, :state, :zip_code, :school_phone, :email, :best_phone, :full_team_entry, :individual_entry, :number_of_wrestlers, :fee)
+    params.require(:applicant).permit(:school, :coach, :address, :city, :state, :zip_code, :school_phone, :email, :best_phone, :full_team_entry, :individual_entry, :number_of_wrestlers, :fee, :section)
   end
 
 end

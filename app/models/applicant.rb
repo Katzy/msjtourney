@@ -10,6 +10,7 @@ class Applicant < ActiveRecord::Base
   validates :number_of_wrestlers, presence: true, null: false
   validates :section, presence: true
   validates_uniqueness_of :email
+  validates_uniqueness_of :school
 
 
   def self.to_csv(options = {})

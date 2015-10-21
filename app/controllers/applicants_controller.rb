@@ -4,8 +4,8 @@ class ApplicantsController < ApplicationController
 
   def index
 
-    @applicants = Applicant.all
-    applicants = Applicant.all
+    @applicants = Applicant.order('school Asc')
+    applicants = Applicant.order('school Asc')
 
 
     respond_to do |format|
@@ -41,6 +41,8 @@ class ApplicantsController < ApplicationController
 
   def create
     @applicant = Applicant.create(applicant_params)
+    @applicant.school = @applicant.school.titleize
+    @applicant.save
     if @applicant.number_of_wrestlers.to_i < 7
       @applicant.fee = (@applicant.number_of_wrestlers.to_i * 40)
       @applicant.save

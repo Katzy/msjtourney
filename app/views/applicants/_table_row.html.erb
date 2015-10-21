@@ -5,8 +5,11 @@
   <td><%= applicant.state %></td>
   <td><%= applicant.best_phone %></td>
   <td><%= applicant.email %></td>
-  <td><%= applicant.full_team_entry %></td>
-  <td><%= applicant.individual_entry %></td>
+  <% if applicant.full_team_entry == true %>
+  <td>YES</td>
+  <% else %>
+  <td>NO</td>
+  <% end %>
   <td><%= applicant.number_of_wrestlers %></td>
   <td><%= applicant.fee %></td>
   <td><a data-toggle="modal" data-target="#edit_applicant_modal" data-remote="<%= edit_applicant_path(applicant) %> #modal-edit-fields" class="btn btn-mini">Edit</a></td>

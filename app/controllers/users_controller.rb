@@ -75,6 +75,24 @@ class UsersController < ApplicationController
   def show
   end
 
+  def all_teams_no_entry
+    @users = User.all
+    @users.each do |user|
+      if user.school != ""
+        no_entry_fill(user)
+      end
+    end
+    redirect_to users_path
+  end
+
+  def no_entry
+
+    @user = User.find(params[:user_id])
+    no_entry_fill(@user)
+    redirect_to user_wrestlers_path(@user)
+
+  end
+
   def destroy
     @users = User.order('name ASC')
     @user = User.find_by_id(params[:id])
@@ -87,6 +105,21 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def no_entry_fill(user)
+    weights = ['106', '113', '120', '126', '132', '138', '145', '152', '160', '170', '182', '195', '220', '285']
+    team_weights = []
+    @wrestlers = user.wrestlers.order('weight ASC')
+    @wrestlers.each do |wrestler|
+      team_weights.push(wrestler.weight.to_s)
+    end
+
+    weights = weights - team_weights
+
+    weights.each do |weight|
+      @wrestler = user.wrestlers.create([:weight => weight.to_i, :last_name => "NO_ENTRY", :first_name => "NO_ENTRY"])
+    end
+  end
 
   def skip_password_attribute
     if params[:password].blank? && params[:password_validation].blank?

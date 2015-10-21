@@ -58,7 +58,9 @@ Rails.application.routes.draw do
 
   get 'users/send' => 'users#send', as: :send_welcome_mail
 
-  # get 'users/wrestlers/no_entry' => 'users/wrestlers/#no_entry', as: :no_entry
+  get 'users/all_teams_no_entry' => 'users#all_teams_no_entry', action:  'all_teams_no_entry'
+
+  # get 'users/:id/no_entry' => 'users/wrestlers/#no_entry', as: :no_entry
 
   post 'create_user' => 'users#create', as: :create_user
 
@@ -67,6 +69,8 @@ Rails.application.routes.draw do
 
 
   resources :users, except: :create do
+
+    get 'no_entry', action: 'no_entry'
     resources :wrestlers, controller: "users/wrestlers"
     resources :tournaments, controller: "users/tournaments"
   end

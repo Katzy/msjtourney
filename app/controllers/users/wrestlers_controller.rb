@@ -32,6 +32,7 @@ module Users
       weights.each do |weight|
         @wrestler = @user.wrestlers.create([:weight => weight.to_i, :last_name => NO_ENTRY, :first_name => NO_ENTRY])
       end
+      redirect_to user_path
 
     end
 
@@ -69,13 +70,12 @@ module Users
     end
 
     def edit
-      @user = User.find(params[:user_id])
-      @wrestler = @user.wrestlers.find(params[:id])
+      # @user = User.find(params[:user_id])
+      @wrestler = Wrestler.find(params[:id])
     end
 
     def show
-      @teams = Team.order('name ASC')
-      @wrestler = @team.wrestlers.find(params[:id])
+      @wrestler = Wrestler.find(params[:id])
     end
 
     def update

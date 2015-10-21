@@ -3,11 +3,15 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-type' />
   </head>
   <body>
-    <h1> <%= @user.school %> </h1>
-    <p>
-      <%= @user.name %> from <%= @user.school %> just updated a wrestler's information!
+    <% if @user.school != nil %>
+      <h1> <%= @user.school %> </h1>
+        <p>
+        <%= @user.name %> from <%= @user.school %> just updated a wrestler's information!
 
 
-    </p>
+        </p>
+      <% else %>
+    <h1> ADMIN just updated a wrestler's information!</h1>
+    <% end %>
   </body>
 </html>

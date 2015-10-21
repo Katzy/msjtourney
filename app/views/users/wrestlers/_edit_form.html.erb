@@ -1,6 +1,5 @@
-<div class="modal-edit-wrestler">
 <div class="border-wrestler-div">
-
+<div class="modal-edit-wrestler">
   <% modal ||= false %>
   <% remote = modal ? true : false %>
     <%= form_for([@wrestler], remote: remote, html: { role: :form, 'data-model' => 'wrestler'}) do |f| %>

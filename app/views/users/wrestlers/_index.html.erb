@@ -18,7 +18,8 @@
       <% if current_user.admin? || current_user.id == @user.id %>
 
         <%= link_to 'ADD WRESTLER', '#new_user_wrestler_modal', 'data-toggle' => 'modal' %>
-      <% end %>
+      <% end %><br>
+
 
   </p>
 
@@ -81,7 +82,7 @@
           <h4 class="modal-title" id="myModalLabel">Add Wrestler</h4>
         </div>
         <div class="modal-body">
-          <%= render 'users/wrestlers/form', modal: true %>
+          <%= render 'form', modal: true %>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -89,6 +90,23 @@
       </div>
     </div>
   </div>
+
+  <div class="modal fade" id="edit_user_wrestler_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Edit Wrestler</h4>
+      </div>
+      <div class="modal-body">
+        <%= render 'form', modal: true %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 

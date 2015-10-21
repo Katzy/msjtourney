@@ -44,7 +44,9 @@
       <% if current_user.admin? %> |
 
         <%= link_to 'ADD WRESTLER', '#new_user_wrestler_modal', 'data-toggle' => 'modal' %>
-      <% end %>
+      <% end %><br><br>
+            <%= link_to 'CLICK HERE IF YOU ENTERED YOUR ENTIRE ROSTER ENTRY', user_no_entry_path(@user), :data => {:confirm => 'Are you sure? By clicking this, you are confirming that this is your complete lineup. The weights in which you have no wrestler will be filled with NO ENTRY!'} %>
+
   </p>
 </div>
 <div class="container" ng-view="">
@@ -111,4 +113,6 @@
       </div>
     </div>
   </div>
+
+</div>
 </div>

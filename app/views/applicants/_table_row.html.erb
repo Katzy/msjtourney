@@ -1,7 +1,6 @@
 <tr>
   <td><%= applicant.school %></td>
   <td><%= applicant.coach %></td>
-  <td><%= applicant.address %></td>
   <td><%= applicant.city %></td>
   <td><%= applicant.state %></td>
   <td><%= applicant.best_phone %></td>
@@ -10,9 +9,28 @@
   <td><%= applicant.individual_entry %></td>
   <td><%= applicant.number_of_wrestlers %></td>
   <td><%= applicant.fee %></td>
-
+  <td><a data-toggle="modal" data-target="#edit_applicant_modal" data-remote="<%= edit_applicant_path(applicant) %> #modal-edit-fields" class="btn btn-mini">Edit</a></td>
 
   <% if current_user.admin? %>
   <td><%= link_to 'Delete', applicant, method: "delete", :data => {:confirm => 'Are you sure?'} %></td>
   <% end %>
 </tr>
+<div class="app-container">
+
+  <div class="modal fade" id="edit_applicant_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">2016 Mission San Jose Invitational Wrestling Tournament Application</h4>
+        </div>
+        <div class="modal-body">
+          <%= render 'applicants/form', modal: true %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

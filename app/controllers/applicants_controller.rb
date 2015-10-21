@@ -19,6 +19,26 @@ class ApplicantsController < ApplicationController
     @applicant = Applicant.new
   end
 
+  def edit
+    @applicant = Applicant.find(params[:id])
+  end
+
+  def show
+  #   @applicant = Applicant.find(params[:id])
+  end
+
+  def update
+    @applicants = Applicant.order('school ASC')
+    @applicant = Applicant.find(params[:id])
+
+    if @applicant.update(applicant_params)
+
+      redirect_to applicants_path
+    else
+      render :edit
+    end
+  end
+
   def create
     @applicant = Applicant.create(applicant_params)
     if @applicant.number_of_wrestlers.to_i < 7

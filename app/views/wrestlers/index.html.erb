@@ -1,3 +1,4 @@
+
 <div class="team-name">
 
   <h1>Wrestlers </h1> (<%= @wrestlers.count %>)
@@ -54,12 +55,18 @@
             </thead>
             <tbody>
               <% @wrestlers.each do |wrestler, user| %>
-                <% if wrestler.first_name != "     NO ENTRY"  %>
-                  <%= render partial: '/users/wrestlers/table_row', locals: { wrestler: wrestler, user: user} %>
-                <% end %>
+
+                  <%= render partial: 'table_row', locals: { wrestler: wrestler, user: user} %>
+
               <% end %>
             </tbody>
           </table>
         </div>
       </div>
     </div>
+  </div>
+
+
+</div>
+
+

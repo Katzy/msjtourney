@@ -1,5 +1,6 @@
-
-<div class="border-wrestler-div">
+<br><br><br>
+<div id="modal-edit-fields">
+  <div class="border-wrestler-div">
   <% modal ||= false %>
   <% remote = modal ? true : false %>
     <%= form_for([@applicant], remote: remote, html: { role: :form, 'data-model' => 'applicant'}) do |f| %>
@@ -79,7 +80,7 @@
           <div class="col-sm-2">
             <%= f.check_box :individual_entry, class: 'form-control' %><br>
           </div>
-          </div>
+        </div>
           $40 / wrestler by Dec 1<br> $50 by Jan 1<br>$60 AFTER Jan 1<br><br>
         <div class="form-group">
           <%= f.label :number_of_wrestlers, class: 'col-sm-3 control-label' %>
@@ -103,4 +104,4 @@
      <br><br>
     <% end %>
   </div>
-</div>
+ </div>

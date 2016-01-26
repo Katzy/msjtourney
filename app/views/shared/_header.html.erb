@@ -33,7 +33,7 @@
               <% @users.each do |user| %>
                 <div style="width: 300px;">
                   <% if user.school != "" %>
-                    <li><%= link_to "#{user.school} (#{user.wrestlers.count})", user_wrestlers_path(user) %></li>
+                    <li><%= link_to "#{user.school} ", user_wrestlers_path(user) %></li>
                   <% end %>
                 </div>
               <% end %>

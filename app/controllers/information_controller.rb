@@ -3,7 +3,7 @@ class InformationController < ApplicationController
   end
 
   def teams_entered
-    @users = User.order('name ASC')
+    @users = Applicant.order('school ASC')
   end
 
   def entry_information

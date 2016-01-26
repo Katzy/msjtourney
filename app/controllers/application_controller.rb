@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
   end
 
   def initialize_users_for_header
+    current_user
     @users = User.order('school ASC')
     @wrestlers = Wrestler.order('weight ASC')
     @applicant = Applicant.new

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   # before_filter :authorize_admin, only: :create
-  before_filter :authenticate_user!, :only => [:edit, :update]
+  # before_filter :authenticate_user!, :only => [:edit, :update]
   before_filter :skip_password_attribute, only: :update
 
   def home
@@ -78,7 +78,7 @@ class UsersController < ApplicationController
   def all_teams_no_entry
     @users = User.all
     @users.each do |user|
-      if user.school != ""
+      if user.school != "" && user.school != nil
         no_entry_fill(user)
       end
     end
